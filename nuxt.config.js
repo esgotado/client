@@ -27,6 +27,10 @@ module.exports = {
                 sizes: '128x128',
                 href: '/favicon.png',
             },
+		{
+			rel: 'stylesheet',
+			href:'https://fonts.googleapis.com/css?family=Varela+Round|Montserrat',
+		}
             {
                 rel: 'stylesheet',
                 href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css',

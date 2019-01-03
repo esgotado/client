@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="sass">
-    @import url('https://fonts.googleapis.com/css?family=Varela+Round|Montserrat')
     body
         padding: 0
     .page-transition-enter-active, .page-transition-leave-active
