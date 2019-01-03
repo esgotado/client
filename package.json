@@ -1,20 +1,26 @@
 {
-  "name": "client",
-  "version": "1.0.0",
-  "description": "esgotado.app original pwa client",
-  "author": "henrycunh",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  }
+    "name": "Esgotado",
+    "version": "1.0.0",
+    "description": "Seu próximo rolê começa aqui!",
+    "author": "henrycunh",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@nuxtjs/pwa": "^2.6.0",
+        "cross-env": "^5.2.0",
+        "node-sass": "^4.11.0",
+        "nuxt": "^2.0.0",
+        "pug": "^2.0.3",
+        "pug-plain-loader": "^1.0.0",
+        "sass-loader": "^7.1.0",
+        "vue2-touch-events": "^1.1.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.11.0"
+    }
 }
