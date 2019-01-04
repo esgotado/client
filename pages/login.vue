@@ -3,9 +3,9 @@
         .login-form
             .greeting {{ randomGreeting }}
             .fields
-                e-field.field(placeholder='email' type='email' icon-name='envelope' )
-                e-field.field(placeholder='senha' type='password' icon-name='key' )
-                e-checkbox.field(boxSize=30) Manter-se logado
+                e-field.field(placeholder='email' :fontSize='mobile ? 12 : 15' type='email' icon-name='envelope' )
+                e-field.field(placeholder='senha' :fontSize='mobile ? 12 : 15' type='password' icon-name='key' )
+                e-checkbox.field(:boxSize='mobile ? 20 : 30' :fontSize='mobile ? 12 : 15') Manter-se logado
                 e-button.field(color='primary') Login
             .link(v-touch='routeLanding') Voltar
 
@@ -25,18 +25,27 @@ export default {
         'e-field': EField,
     },
     data() {
-        return {}
+        return {
+            innerWidth: 0,
+        }
     },
     layout: 'landing',
     computed: {
         randomGreeting() {
             return _.sample(greetings)
         },
+        mobile() {
+            return this.innerWidth <= 580
+        },
     },
     methods: {
         routeLanding() {
             this.$router.push('/')
         },
+    },
+    mounted() {
+        this.innerWidth = window.innerWidth
+        window.onresize = e => (this.innerWidth = window.innerWidth)
     },
 }
 </script>
@@ -83,5 +92,9 @@ export default {
         .login-form
             .greeting, .fields .field
                 width: 300px
+            .greeting
+                font-size: 15pt
+            .fields .field
+                font-size: 9pt
 </style>
 

@@ -3,7 +3,7 @@
         .icon
             i(:class='iconClass')
         .field
-            input(:placeholder='placeholder' :type='type')
+            input(:placeholder='placeholder' :style='fieldStyle' :type='type')
 
 </template>
 
@@ -19,6 +19,10 @@ export default {
         width: {
             type: String,
         },
+        fontSize: {
+            type: Number,
+            default: 15,
+        },
         type: String,
     },
     computed: {
@@ -29,6 +33,11 @@ export default {
                 classes[`fa-${this.iconName}`] = true
             }
             return classes
+        },
+        fieldStyle() {
+            return {
+                fontSize: this.fontSize + 'pt',
+            }
         },
         containerStyle() {
             let style = {}

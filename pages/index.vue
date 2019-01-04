@@ -1,8 +1,8 @@
 <template lang="pug">
     div
-        e-button(type='block' color='#3da4ff') Entre com facebook
+        e-button.button(type='block' color='#3da4ff') Entre com facebook
         .or ou
-        e-button(type='block') Cadastro meio chato
+        e-button.button(type='block') Cadastro meio chato
         .login
             .text Já possui uma conta?
             .link(v-touch='routeLogin') Login
@@ -34,13 +34,12 @@ export default {
         color: #FFF
         text-align: center
         font-size: 24pt
-        margin: 40px 0
+        margin: 20px 0
     .login
         text-transform: uppercase
         text-align: center
         .text
             font-size: 12pt
-            margin: 50px
             margin-bottom: 0
         .link
             color: #FF6D37
@@ -58,5 +57,10 @@ export default {
                 opacity: .7
                 padding: 0 40px
                 border-color: #FF6D3755
+    @media(max-width: 550px)
+        .or
+            font-size: 16pt
+        .button
+            font-size: 11pt
 </style>
 

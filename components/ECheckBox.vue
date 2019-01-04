@@ -1,7 +1,7 @@
 <template lang="pug">
     .e-check-box--cnt(:style='containerStyle')
         .box(:style='boxStyle' :class='{boxActive}' v-touch='toggle')
-        .label
+        .label(:style='labelStyle')
             slot    
 </template>
 
@@ -20,10 +20,19 @@ export default {
         width: {
             type: String,
         },
+        fontSize: {
+            type: Number,
+            default: 15,
+        },
     },
     computed: {
         boxStyle() {
             return { width: `${this.boxSize}px`, height: `${this.boxSize}px` }
+        },
+        labelStyle() {
+            return {
+                fontSize: this.fontSize + 'pt',
+            }
         },
         containerStyle() {
             let style = {}
