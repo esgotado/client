@@ -27,10 +27,11 @@ module.exports = {
                 sizes: '128x128',
                 href: '/favicon.png',
             },
-		{
-			rel: 'stylesheet',
-			href:'https://fonts.googleapis.com/css?family=Varela+Round|Montserrat',
-		},
+            {
+                rel: 'stylesheet',
+                href:
+                    'https://fonts.googleapis.com/css?family=Varela+Round|Montserrat',
+            },
             {
                 rel: 'stylesheet',
                 href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css',
@@ -73,7 +74,7 @@ module.exports = {
         background_color: '#FF6D37',
         description:
             'Encontre rolês e marque tua presença, além de concorrer a convites de graça!',
-        display: 'fullscreen',
+        display: 'minimal-ui',
     },
 
     /*

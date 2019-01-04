@@ -22,6 +22,7 @@ export default {
 <style lang="sass">
     body
         padding: 0
+        background: #2c2c2c
     .page-transition-enter-active, .page-transition-leave-active
         transition: all .5s
     
@@ -31,6 +32,7 @@ export default {
         bottom: 0
         right: 0
         left: 0
+        border-radius: 3vw
         background: url(../assets/imgs/bg.jpg)
         .dimmer
             @extend #landing-page
