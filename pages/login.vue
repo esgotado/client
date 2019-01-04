@@ -97,7 +97,7 @@ export default {
             .fields .field
                 font-size: 9pt
             .link
-                left: 50%
-                transform: translateX(-50%)
+                left: 45%
+                transform: translateX(-45%)
 </style>
 

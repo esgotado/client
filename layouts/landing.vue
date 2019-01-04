@@ -32,11 +32,10 @@ export default {
         bottom: 0
         right: 0
         left: 0
-        border-radius: 30px
         background: url(../assets/imgs/bg.jpg)
         background-attachment: fixed
         background-repeat: no-repeat
-        background-position: center
+        background-position: center bottom
         .dimmer
             @extend #landing-page
             background: #2c2c2c
