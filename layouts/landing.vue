@@ -63,7 +63,7 @@ export default {
         #landing-page 
             .logo
                 img
-                    width: 270px
+                    width: 240px
             .actions
                 left: 5vw
                 right: 5vw

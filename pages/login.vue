@@ -52,7 +52,7 @@ export default {
 
 <style lang="sass" scoped>
     .login-form
-        margin-bottom: 140px
+        padding-bottom: 60px
         .greeting
             font-family: "Varela Round", sans-serif
             font-size: 24pt
@@ -70,7 +70,6 @@ export default {
             width: 80px
             margin: 10px
             position: absolute
-            margin-bottom: 60px
             font-size: 12pt
             opacity: .4
             cursor: pointer
@@ -80,8 +79,8 @@ export default {
             border-bottom: 2px solid #FFFFFF66
             transition: .5s ease
             display: inline-block
-            left: 50%
-            transform: translateX(-50%)
+            left: 45%
+            transform: translateX(-45%)
             &:hover
                 transition: .5s ease
                 padding: 0 40px
