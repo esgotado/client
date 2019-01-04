@@ -18,7 +18,6 @@ export default {
         placeholder: String,
         width: {
             type: String,
-            default: '200px',
         },
         type: String,
     },

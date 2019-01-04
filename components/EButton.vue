@@ -13,9 +13,9 @@ import ColorMap from '~/assets/colorMap'
 export default {
     props: {
         type: String,
-        color: String,
+        color: { type: String, default: 'primary' },
         click: Function,
-        width: { type: String, default: '200px' },
+        width: { type: String },
     },
     methods: {},
     transition: 'page-transition',
@@ -31,8 +31,8 @@ export default {
             let style = {}
             let color = this.mappedColor
             if (color) {
-                style.color = color
-                style.borderColor = color
+                style['--color'] = color
+                style.borderColor = 'var(--color)'
             }
             if (this.width && !this.typeClasses['e-button--block'])
                 style.width = this.width
@@ -48,11 +48,12 @@ export default {
 
 <style lang="sass" scoped>
     button
-        padding: 1.4em 4em
+        padding: 1.2em 4em
         border: 2px solid #FFF
-        color: #FFF
-        border-radius: 50px
+        color: var(--color)
+        border-radius: 20px
         font-family: "Varela Round", sans-serif
+        font-weight: 700
         text-transform: uppercase
         background: transparent
         font-size: 12pt
@@ -61,7 +62,8 @@ export default {
         transition: .5s ease
         display: block
         &:hover
-            transform: scale(1.2)
+            background: var(--color)
+            color: #FFF
     .e-button--block
         display: block
         width: 100%

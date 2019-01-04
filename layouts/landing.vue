@@ -43,6 +43,7 @@ export default {
         .logo
             padding: 60px
             img
+                transition: .5s ease
                 display: block
                 margin: 0 auto
                 width: 400px
@@ -81,6 +82,20 @@ export default {
                         opacity: .7
                         padding: 0 40px
                         border-color: #FF6D3755
+    @media(max-width: 1010px)
+        #landing-page .actions
+            left: 20vw
+            right: 20vw
+    @media(max-width: 550px)
+        #landing-page 
+            .logo
+                img
+                    width: 270px
+            .actions
+                left: 5vw
+                right: 5vw
+
+    
     .page-enter-active, .page-leave-active
         transition: all .5s
         transform: scale(1)

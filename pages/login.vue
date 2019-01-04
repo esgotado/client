@@ -1,12 +1,12 @@
 <template lang="pug">
     div
         .login-form
-            .greeting oi sumido rs
+            .greeting {{ randomGreeting }}
             .fields
-                e-field.field(placeholder='email' type='email' icon-name='envelope' width='500px')
-                e-field.field(placeholder='senha' type='password' icon-name='key' width='500px')
-                e-checkbox.field(width='500px' boxSize=30) Manter-se logado
-                e-button.field(width='500px' color='primary') Login
+                e-field.field(placeholder='email' type='email' icon-name='envelope' )
+                e-field.field(placeholder='senha' type='password' icon-name='key' )
+                e-checkbox.field(boxSize=30) Manter-se logado
+                e-button.field(color='primary') Login
             .link(v-touch='routeLanding') Voltar
 
 </template>
@@ -15,6 +15,8 @@
 import ECheckBox from '~/components/ECheckBox.vue'
 import EButton from '~/components/EButton.vue'
 import EField from '~/components/EField.vue'
+import greetings from '~/assets/greetings'
+import _ from 'lodash'
 
 export default {
     components: {
@@ -26,7 +28,11 @@ export default {
         return {}
     },
     layout: 'landing',
-    computed: {},
+    computed: {
+        randomGreeting() {
+            return _.sample(greetings)
+        },
+    },
     methods: {
         routeLanding() {
             this.$router.push('/')
@@ -42,11 +48,14 @@ export default {
             font-family: "Varela Round", sans-serif
             font-size: 24pt
             color: #FFF
-            // text-align: center
+            width: 500px
+            margin: 0 auto
+            text-align: center
             margin-bottom: 40px
         .fields
             .field
                 margin: 30px auto
+                width: 500px
         .link
             color: #FFFFFFAA
             width: 80px
@@ -70,5 +79,9 @@ export default {
                 opacity: 1
                 border-color: #FF6D3755
                 color: #FFFFFFCC
+    @media(max-width: 560px)
+        .login-form
+            .greeting, .fields .field
+                width: 300px
 </style>
 
