@@ -74,7 +74,7 @@ module.exports = {
         background_color: '#FF6D37',
         description:
             'Encontre rolês e marque tua presença, além de concorrer a convites de graça!',
-        display: 'standalone',
+        display: 'fullscreen',
     },
 
     /*
