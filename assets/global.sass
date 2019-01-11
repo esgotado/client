@@ -1,0 +1,16 @@
+$primary: #FF6D37
+
+.e-loading
+    *
+        opacity: .3
+    &::after
+        content: ' '
+        position: absolute
+        width: 200px
+        height: 200px
+        opacity: 1
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        background-size: contain
+        background: url(../assets/imgs/loading.svg)

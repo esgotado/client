@@ -1,9 +1,19 @@
 <template lang="pug">
-    .efield--cnt(:style='containerStyle')
+    .efield--cnt(:style='containerStyle' :class='containerClasses')
         .icon
             i(:class='iconClass')
         .field
-            input(:placeholder='placeholder' :style='fieldStyle' :type='type')
+            input(
+                :placeholder='placeholder'
+                v-bind:value='value'
+                v-on:input='$emit("input", $event.target.value)'
+                :style='fieldStyle'
+                :type='type'
+                )
+            .message(
+                v-if='validation && validation.error'
+            ) {{ validation ? validation.message : '' }}
+
 
 </template>
 
@@ -24,6 +34,9 @@ export default {
             default: 15,
         },
         type: String,
+        variation: String,
+        validation: Object,
+        value: String,
     },
     computed: {
         iconClass() {
@@ -34,10 +47,21 @@ export default {
             }
             return classes
         },
+        variations() {
+            let vars = []
+            if (this.variation) vars = this.variation.split(' ')
+            if (this.validation && this.validation.error) vars.push('invalid')
+            return vars
+        },
         fieldStyle() {
             return {
                 fontSize: this.fontSize + 'pt',
             }
+        },
+        containerClasses() {
+            let classes = {}
+            for (let type of this.variations) classes[type] = true
+            return classes
         },
         containerStyle() {
             let style = {}
@@ -80,5 +104,37 @@ export default {
             .field input
                 border-color: #FFFFFFCC
                 color: #FFFFFFCC
+        &.invalid
+            $color: #ffdc73
+            .icon
+                color: rgba($color, .3)
+            .field input
+                border-color: rgba($color, .3)
+                color: rgba($color, .3)
+                &::-webkit-input-placeholder
+                    color: rgba($color, .3)
+            &:focus-within
+                .icon
+                    color: $color
+                .field input
+                    border-color: $color
+                    color: $color
+        .message
+            font-family: "Montserrat", sans-serif
+            border: 2px solid #ffdc73
+            color: #ffdc73
+            margin-top: 10px
+            box-sizing: border-box
+            border-radius: 10px
+            font-size: 12pt
+            padding: 1em 1.5em
+    .message-enter-active, .message-leave-active
+        transition: all .5s ease
+        transform: translateY(0px)
+        opacity: 1
+    .message-enter, .message-leave-active
+        transform: translate(0)
+        opacity: 0    
+
 
 </style>

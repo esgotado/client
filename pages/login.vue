@@ -5,7 +5,7 @@
             .fields
                 e-field.field(placeholder='email' :fontSize='mobile ? 12 : 15' type='email' icon-name='envelope' )
                 e-field.field(placeholder='senha' :fontSize='mobile ? 12 : 15' type='password' icon-name='key' )
-                e-checkbox.field(:boxSize='mobile ? 20 : 30' :fontSize='mobile ? 12 : 15') Manter-se logado
+                e-checkbox.field(:boxSize='mobile ? "20" : "30"' :fontSize='mobile ? 12 : 15') Manter-se logado
                 e-button.field(color='primary') Login
             .link(v-touch='routeLanding') Voltar
 

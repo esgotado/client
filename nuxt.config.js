@@ -66,7 +66,9 @@ module.exports = {
     /*
      ** Nuxt.js modules
      */
-    modules: ['@nuxtjs/pwa'],
+    modules: ['@nuxtjs/pwa', 'nuxt-sass-resources-loader'],
+
+    sassResources: ['@/assets/global.sass'],
 
     manifest: {
         name: 'Esgotado',
@@ -75,7 +77,7 @@ module.exports = {
         description:
             'Encontre rolês e marque tua presença, além de concorrer a convites de graça!',
         display: 'fullscreen',
-	orientation: 'portrait'
+        orientation: 'portrait',
     },
 
     /*

@@ -2,7 +2,7 @@
     div
         e-button.button(type='block' color='#3da4ff') Entre com facebook
         .or ou
-        e-button.button(type='block') Cadastro meio chato
+        e-button.button(type='block' v-touch='routeSignup') Cadastro meio chato
         .login
             .text Já possui uma conta?
             .link(v-touch='routeLogin') Login
@@ -23,6 +23,9 @@ export default {
     methods: {
         routeLogin() {
             this.$router.push('/login')
+        },
+        routeSignup() {
+            this.$router.push('/signup')
         },
     },
 }
