@@ -4,7 +4,14 @@ const API_ADDR = 'https://esgotado.app/api'
 
 export default {
     async index(payload) {
-        let { data } = await axios.post(`${API_ADDR}/auth/new/user`, payload)
-        return data
+        try {
+            let { data } = await axios.post(
+                `${API_ADDR}/auth/new/user`,
+                payload
+            )
+            return data
+        } catch (e) {
+            return e.response
+        }
     },
 }

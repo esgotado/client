@@ -169,10 +169,14 @@ export default {
             this.loading = true
             let { email, name, pwd, pwdConf, college } = this
             let user = { name, email, pass: pwd, college_id: college }
-            let data = await User.index(user)
-            console.log(data)
+            let status = await User.index(user)
+            let { data = null } = status
+            if (!data) this.signupDone = true
+            else if (data && data.info == 'user already indexed') {
+                this.errorMessage = 'email já utilizado, tente logar'
+                this.errorField = 'email'
+            }
             this.loading = false
-            this.signupDone = true
         },
     },
     mounted() {
