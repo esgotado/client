@@ -3,4 +3,8 @@ export default {
         state.page = pageName
         return state
     },
+    setAuthToken(state, token) {
+        state.authToken = token
+        return state
+    },
 }

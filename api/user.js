@@ -14,4 +14,18 @@ export default {
             return e.response
         }
     },
+
+    /**
+     *
+     * @param {{email,pass}} payload User email and password
+     */
+    async auth(payload) {
+        try {
+            let { email, pass } = payload
+            let { data } = await axios.post(`${API_ADDR}/auth`, { email, pass })
+            return data
+        } catch (e) {
+            return e.response
+        }
+    },
 }

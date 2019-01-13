@@ -119,7 +119,8 @@ export default {
         },
         verifyFields() {
             console.log('verifying')
-            this.errorMessage = this.errorField = null
+            this.errorMessage = null
+            this.errorField = null
             if (!this.name) {
                 this.errorField = 'name'
                 this.errorMessage = 'preencha o nome'

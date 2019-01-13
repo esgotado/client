@@ -24,6 +24,7 @@ export default {
             type: Number,
             default: 15,
         },
+        value: Boolean,
     },
     computed: {
         boxStyle() {
@@ -42,8 +43,8 @@ export default {
     },
     methods: {
         toggle() {
-            console.log(this.boxActive)
             this.boxActive = !this.boxActive
+            this.$emit('input', this.boxActive)
         },
     },
 }

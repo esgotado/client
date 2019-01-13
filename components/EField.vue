@@ -9,6 +9,7 @@
                 v-on:input='$emit("input", $event.target.value)'
                 :style='fieldStyle'
                 :type='type'
+                @keyup.enter='enter'
                 )
             .message(
                 v-if='validation && validation.error'
@@ -34,6 +35,7 @@ export default {
             default: 15,
         },
         type: String,
+        enter: Function,
         variation: String,
         validation: Object,
         value: String,
